@@ -1,3 +1,5 @@
+import cupy as cp
+
 def float_to_binary(array):
     sign_array = cp.signbit(array)
     array = cp.abs(array).view(cp.uint32)

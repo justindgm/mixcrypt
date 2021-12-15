@@ -18,3 +18,5 @@ def encrypt(tensor: torch.tensor):
     encrypted_mantissas = [phe_public_key.encrypt(val) for val in mantissas.flatten()]
     encrypted_exponents = [rsa.encrypt(val, rsa_public_key) for val in exponents.flatten()]
     return 0
+
+encrypt(t)

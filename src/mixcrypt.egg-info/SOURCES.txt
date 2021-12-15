@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/mixcrypt/__init__.py
+src/mixcrypt/mixcrypt.py
+src/mixcrypt/util.py
+src/mixcrypt.egg-info/PKG-INFO
+src/mixcrypt.egg-info/SOURCES.txt
+src/mixcrypt.egg-info/dependency_links.txt
+src/mixcrypt.egg-info/top_level.txt

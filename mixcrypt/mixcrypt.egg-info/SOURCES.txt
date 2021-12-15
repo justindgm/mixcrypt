@@ -1,8 +1,0 @@
-LICENSE
-README.md
-pyproject.toml
-setup.cfg
-mixcrypt/mixcrypt.egg-info/PKG-INFO
-mixcrypt/mixcrypt.egg-info/SOURCES.txt
-mixcrypt/mixcrypt.egg-info/dependency_links.txt
-mixcrypt/mixcrypt.egg-info/top_level.txt
