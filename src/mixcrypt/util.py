@@ -1,4 +1,5 @@
 import numpy as np
+import torch
 # import torch
 # import cupy as cp
 
@@ -10,6 +11,13 @@ def float_to_binary(array):
     exponent_array = (((array & 0b01111111100000000000000000000000) >> 23) - 127).astype(np.uint8) # TODO: interpret as uint or int?
     mantissa_array = (array & 0b00000000011111111111111111111111) | 0b00000000100000000000000000000000 # OR for implicit bit
     return sign_array, exponent_array, mantissa_array
+
+def binary_to_float(signs, exponents, mantissas):
+    signs = signs.astype(np.int32) * 2 - 1
+    exponents = ((exponents.astype(np.uint32) + 127) << 23)
+    mantissas = mantissas.astype(np.uint32) & 0b00000000011111111111111111111111 # remove implicit bit
+    array = torch.tensor((exponents | mantissas).view(np.float32)) * signs
+    return array
 
 
 # # tensor = torch.rand((256, 128, 3, 3), dtype=torch.float32)
