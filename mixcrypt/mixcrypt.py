@@ -3,7 +3,7 @@ import rsa
 import torch
 import cupy as cp
 
-from mxc.util import float_to_binary
+from mixcrypt.util import float_to_binary
 
 phe_public_key, phe_private_key = phe.generate_paillier_keypair()
 rsa_public_key, rsa_private_key = rsa.newkeys(3072)
@@ -18,5 +18,3 @@ def encrypt(tensor: torch.tensor):
     encrypted_mantissas = [phe_public_key.encrypt(val) for val in mantissas.flatten()]
     encrypted_exponents = [rsa.encrypt(val, rsa_public_key) for val in exponents.flatten()]
     return 0
-
-encrypt(t)

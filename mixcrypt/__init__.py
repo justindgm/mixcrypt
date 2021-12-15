@@ -1,0 +1,1 @@
+from mixcrypt.mixcrypt import encrypt
